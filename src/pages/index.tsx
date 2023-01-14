@@ -6,22 +6,27 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
 
 export default function Home() {
   const [ip, setIp] = React.useState('')
   const [port, setPort] = React.useState('')
+
+  axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
+  axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
+
   const handleOnPrevSlide = () => {
-    axios
-      .get(`https://${ip}:${port}/v1/presentation/focused/previous/trigger`)
-      .then()
+    axios({
+      url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
+      withCredentials: false,
+    }).then()
   }
 
   const handleOnNextSlide = () => {
-    axios
-      .get(`https://${ip}:${port}/v1/presentation/focused/next/trigger`)
-      .then()
+    axios({
+      url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
+      withCredentials: false,
+    }).then()
   }
 
   const onIpChanged = (e: any) => {
