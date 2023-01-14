@@ -27,7 +27,7 @@ export default function Home() {
     //   },
     // }).then()
 
-    const url = `http://${ip}:${port}/v1/presentation/focused/previous/trigger`
+    const url = `https://${ip}:${port}/v1/presentation/focused/previous/trigger`
 
     xhr.open('GET', url)
     xhr.send()
