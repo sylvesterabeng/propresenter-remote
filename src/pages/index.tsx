@@ -3,6 +3,7 @@ import React from 'react'
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+const XMLHttpRequest = require('xhr2')
 
 const inter = Inter({ subsets: ['latin'] })
 
