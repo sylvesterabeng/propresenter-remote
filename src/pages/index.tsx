@@ -16,19 +16,18 @@ export default function Home() {
 
   const handleOnPrevSlide = () => {
     axios({
-      url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
+      url: `http://${ip}:${port}/v1/presentation/focused/previous/trigger`,
       withCredentials: false,
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
         'Content-Type': 'application/x-www-form-urlencoded',
-        Origin: 'https://openapi.propresenter.com',
       },
     }).then()
   }
 
   const handleOnNextSlide = () => {
     axios({
-      url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
+      url: `http://${ip}:${port}/v1/presentation/focused/next/trigger`,
       withCredentials: false,
       headers: { 'X-Requested-With': 'XMLHttpRequest' },
     }).then()
