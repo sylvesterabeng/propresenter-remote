@@ -16,6 +16,9 @@ export default function Home() {
     axios({
       url: `http://${ip}:${port}/v1/presentation/focused/previous/trigger`,
       withCredentials: false,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
     }).then()
   }
 
@@ -23,6 +26,9 @@ export default function Home() {
     axios({
       url: `http://${ip}:${port}/v1/presentation/focused/next/trigger`,
       withCredentials: false,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
     }).then()
   }
 
