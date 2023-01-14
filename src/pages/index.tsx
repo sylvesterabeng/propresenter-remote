@@ -11,13 +11,13 @@ export default function Home() {
   const [port, setPort] = React.useState('')
   const handleOnPrevSlide = () => {
     axios
-      .get(`http://${ip}:${port}/v1/presentation/focused/previous/trigger`)
+      .get(`https://${ip}:${port}/v1/presentation/focused/previous/trigger`)
       .then()
   }
 
   const handleOnNextSlide = () => {
     axios
-      .get(`http://${ip}:${port}/v1/presentation/focused/next/trigger`)
+      .get(`https://${ip}:${port}/v1/presentation/focused/next/trigger`)
       .then()
   }
 
