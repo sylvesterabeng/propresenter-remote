@@ -25,11 +25,13 @@ export default function Home() {
     //     'Content-Type': 'application/x-www-form-urlencoded',
     //   },
     // }).then()
-    xhr.open(
-      'GET',
-      `http://${ip}:${port}/v1/presentation/focused/previous/trigger`
-    )
-    xhr.send()
+    // xhr.open(
+    //   'GET',
+    //   `http://${ip}:${port}/v1/presentation/focused/previous/trigger`
+    // )
+    // xhr.send()
+    var http = require('http')
+    http.get(`http://${ip}:${port}/v1/presentation/focused/previous/trigger`)
   }
 
   const handleOnNextSlide = () => {
