@@ -6,6 +6,9 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
+
 export default function Home() {
   const [ip, setIp] = React.useState('')
   const [port, setPort] = React.useState('')
