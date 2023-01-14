@@ -6,19 +6,18 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
-
 export default function Home() {
   const [ip, setIp] = React.useState('')
   const [port, setPort] = React.useState('')
+
+  axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*'
+  axios.defaults.headers.get['Content-Type'] =
+    'application/x-www-form-urlencoded'
 
   const handleOnPrevSlide = () => {
     axios({
       url: `http://${ip}:${port}/v1/presentation/focused/previous/trigger`,
       withCredentials: false,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
     }).then()
   }
 
@@ -26,9 +25,6 @@ export default function Home() {
     axios({
       url: `http://${ip}:${port}/v1/presentation/focused/next/trigger`,
       withCredentials: false,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
     }).then()
   }
 
