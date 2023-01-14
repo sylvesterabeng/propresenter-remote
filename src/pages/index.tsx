@@ -16,14 +16,14 @@ export default function Home() {
 
   const handleOnPrevSlide = () => {
     axios({
-      url: `http://${ip}:${port}/v1/presentation/focused/previous/trigger`,
+      url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
       withCredentials: false,
     }).then()
   }
 
   const handleOnNextSlide = () => {
     axios({
-      url: `http://${ip}:${port}/v1/presentation/focused/next/trigger`,
+      url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
       withCredentials: false,
     }).then()
   }
