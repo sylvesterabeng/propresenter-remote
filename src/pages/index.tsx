@@ -14,18 +14,30 @@ export default function Home() {
   axios.defaults.headers.get['Content-Type'] =
     'application/x-www-form-urlencoded'
 
+  const xhr = new XMLHttpRequest()
+
   const handleOnPrevSlide = () => {
-    axios({
-      url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
-      withCredentials: false,
-    }).then()
+    // axios({
+    //   url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
+    //   withCredentials: false,
+    //   headers: {
+    //     'X-Requested-With': 'XMLHttpRequest',
+    //     'Content-Type': 'application/x-www-form-urlencoded',
+    //   },
+    // }).then()
+
+    const url = `http://${ip}:${port}/v1/presentation/focused/previous/trigger`
+
+    xhr.open('GET', url)
+    xhr.send()
   }
 
   const handleOnNextSlide = () => {
-    axios({
-      url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
-      withCredentials: false,
-    }).then()
+    // axios({
+    //   url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
+    //   withCredentials: false,
+    //   headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    // }).then()
   }
 
   const onIpChanged = (e: any) => {
