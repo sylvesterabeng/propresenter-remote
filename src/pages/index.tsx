@@ -3,7 +3,6 @@ import React from 'react'
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-const XMLHttpRequest = require('xhr2')
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,30 +14,24 @@ export default function Home() {
   axios.defaults.headers.get['Content-Type'] =
     'application/x-www-form-urlencoded'
 
-  const xhr = new XMLHttpRequest()
-
   const handleOnPrevSlide = () => {
-    // axios({
-    //   url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
-    //   withCredentials: false,
-    //   headers: {
-    //     'X-Requested-With': 'XMLHttpRequest',
-    //     'Content-Type': 'application/x-www-form-urlencoded',
-    //   },
-    // }).then()
-
-    const url = `https://${ip}:${port}/v1/presentation/focused/previous/trigger`
-
-    xhr.open('GET', url)
-    xhr.send()
+    axios({
+      url: `https://${ip}:${port}/v1/presentation/focused/previous/trigger`,
+      withCredentials: false,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Origin: 'https://openapi.propresenter.com',
+      },
+    }).then()
   }
 
   const handleOnNextSlide = () => {
-    // axios({
-    //   url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
-    //   withCredentials: false,
-    //   headers: { 'X-Requested-With': 'XMLHttpRequest' },
-    // }).then()
+    axios({
+      url: `https://${ip}:${port}/v1/presentation/focused/next/trigger`,
+      withCredentials: false,
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    }).then()
   }
 
   const onIpChanged = (e: any) => {
